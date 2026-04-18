@@ -72,7 +72,9 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                href="#"
+                href="https://www.instagram.com/hertz.filmes/"
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-4 text-zinc-300 hover:text-pink-500 group transition-colors"
               >
                 <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-pink-500 transition-colors">
