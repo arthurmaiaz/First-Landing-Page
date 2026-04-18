@@ -16,7 +16,7 @@ const categories = [
       "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1974&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1536243298747-af8830f24d07?q=80&w=2070&auto=format&fit=crop",
+      "/images/audiovisual/vfx_4.png",
     ]
   },
   {
@@ -34,7 +34,7 @@ const categories = [
     icon: Clapperboard,
     images: [
       "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1516280440502-1262dceab326?q=80&w=2070&auto=format&fit=crop",
+      "/images/audiovisual/social_media_2.png",
       "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=2006&auto=format&fit=crop",
     ]
