@@ -12,6 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Hertz Entertainment",
   description: "Produção de eventos, gestão de entretenimento e experiências personalizadas.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
