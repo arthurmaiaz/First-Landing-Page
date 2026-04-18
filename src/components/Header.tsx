@@ -73,7 +73,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-zinc-300 hover:text-amber-400 font-medium block py-2"
+              className="bg-amber-500 text-zinc-950 text-center font-semibold rounded-full py-3 active:scale-95 transition-all"
             >
               {link.name}
             </Link>
@@ -81,7 +81,7 @@ export default function Header() {
           <Link
             href="/#contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="bg-amber-500 text-zinc-950 text-center font-semibold rounded-full py-3 mt-4"
+            className="bg-amber-500 text-zinc-950 text-center font-semibold rounded-full py-3 active:scale-95 transition-all"
           >
             Fale Conosco
           </Link>

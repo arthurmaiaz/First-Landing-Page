@@ -1,9 +1,32 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Camera, MessageCircle, ArrowRight } from "lucide-react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const { name, email, message } = formData;
+    const subject = encodeURIComponent(`Contato Hertz - ${name}`);
+    const body = encodeURIComponent(
+      `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`
+    );
+    
+    window.location.href = `mailto:entertainmenthertz@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
   return (
     <section id="contact" className="py-24 bg-zinc-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +119,7 @@ export default function Contact() {
             className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl"
           >
             <h3 className="text-2xl font-bold text-white mb-6">Deixe sua mensagem</h3>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-sm font-medium text-zinc-400 mb-1" htmlFor="name">
                   Nome completo
@@ -104,6 +127,9 @@ export default function Contact() {
                 <input
                   type="text"
                   id="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
                   placeholder="Seu nome"
                 />
@@ -115,6 +141,9 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
                   placeholder="seu@email.com"
                 />
@@ -125,7 +154,10 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  required
                   rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all resize-none"
                   placeholder="Como podemos ajudar?"
                 />
